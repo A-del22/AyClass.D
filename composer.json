@@ -63,14 +63,21 @@
             "dont-discover": []
         }
     },
-    "config": {
+        "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
+        },
+        "platform": {
+            "php": "8.2",
+            "ext-gd": "*"
         }
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
+
 }
+
