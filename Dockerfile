@@ -1,16 +1,17 @@
 FROM php:8.2-cli
 
-# Install dependensi dan ekstensi GD
+# Install dependensi dan ekstensi PHP yang dibutuhkan
 RUN apt-get update && apt-get install -y \
-    libpng-dev libjpeg-dev libfreetype6-dev zip git unzip \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    libzip-dev zip git unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo pdo_mysql
+    && docker-php-ext-install gd pdo pdo_mysql zip
 
-# Copy semua file ke container
+# Copy semua file project ke container
 WORKDIR /app
 COPY . .
 
-# Install composer
+# Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
