@@ -1,19 +1,29 @@
-FROM php:8.2-cli
+# Gunakan image PHP dengan Apache bawaan
+FROM php:8.2-apache
 
-# Install dependensi dan ekstensi PHP yang dibutuhkan
+# Install ekstensi yang dibutuhkan Laravel
 RUN apt-get update && apt-get install -y \
-    libpng-dev libjpeg-dev libfreetype6-dev \
-    libzip-dev zip git unzip \
+    libpng-dev libjpeg-dev libfreetype6-dev libzip-dev zip git unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd pdo pdo_mysql zip
 
-# Copy semua file project ke container
-WORKDIR /app
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy semua file ke dalam container
 COPY . .
 
-# Install Composer
+# Install composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Jalankan aplikasi Laravel
-CMD php artisan serve --host=0.0.0.0 --port=${PORT}
+# Beri izin ke folder storage dan cache
+RUN chmod -R 755 storage bootstrap/cache
+
+# Expose port 80 untuk Railway
+EXPOSE 80
+
+# Jalankan Apache di folder public Laravel
+CMD ["apache2-foreground"]
