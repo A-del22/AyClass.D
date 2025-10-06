@@ -82,7 +82,7 @@
                     @else
                         <div class="text-center py-3">
                             <i class="ri-calendar-close-line font-48 text-muted mb-3"></i>
-                            <h6 class="text-muted">Belum absen hari ini</h6>
+                            <h6 class="text-muted">Belum Presensi hari ini</h6>
                             <p class="text-muted">Silakan lakukan presensi melalui QR Code atau hubungi guru</p>
                         </div>
                     @endif

@@ -457,7 +457,7 @@
                                 <button id="manualAttendanceBtn" class="btn btn-secondary" disabled
                                     title="Pilih kelas terlebih dahulu">
                                     <i class="ri-edit-line me-1"></i>
-                                    <span class="d-none d-sm-inline">Absensi Manual</span>
+                                    <span class="d-none d-sm-inline">Presensi Manual</span>
                                     <span class="d-sm-none">Manual</span>
                                 </button>
                             </div>
@@ -465,7 +465,7 @@
                             <!-- Help Text -->
                             <div id="helpText" class="alert alert-info alert-sm mb-3" style="font-size: 0.875rem;">
                                 <i class="ri-information-line me-1"></i>
-                                Pilih kelas untuk mengaktifkan tombol QR Scan dan Absensi Manual
+                                Pilih kelas untuk mengaktifkan tombol QR Scan dan Presensi Manual
                             </div>
 
                             <!-- Filter Controls -->
@@ -740,8 +740,8 @@
                     manualBtn.prop('disabled', false);
                     qrScanBtn.removeClass('btn-secondary').addClass('btn-success');
                     manualBtn.removeClass('btn-secondary').addClass('btn-warning');
-                    qrScanBtn.attr('title', 'Scan QR Code untuk absensi');
-                    manualBtn.attr('title', 'Input absensi secara manual');
+                    qrScanBtn.attr('title', 'Scan QR Code untuk Presensi');
+                    manualBtn.attr('title', 'Input Presensi secara manual');
                     helpText.hide();
                 }
             });

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Absensi Manual')
+@section('title', 'Presensi Manual')
 
 @push('styles')
     <!-- Select2 CSS -->
@@ -111,14 +111,14 @@
 
 @section('content')
     <div class="container-fluid">
-        <x-breadcrumbs title="Absensi Manual" />
+        <x-breadcrumbs title="Presensi Manual" />
 
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="header-title mb-0">Absensi Manual</h4>
-                        <p class="text-muted mb-0">Input absensi siswa secara manual</p>
+                        <h4 class="header-title mb-0">Presensi Manual</h4>
+                        <p class="text-muted mb-0">Input Presensi siswa secara manual</p>
                     </div>
                     <div class="card-body">
                         @if (session('success'))
@@ -176,7 +176,7 @@
                                 @else
                                     <div class="alert alert-info">
                                         <i class="ri-information-line me-2"></i>
-                                        Semua siswa di kelas ini sudah melakukan absensi hari ini.
+                                        Semua siswa di kelas ini sudah melakukan Presensi hari ini.
                                     </div>
                                 @endif
                             </div>
@@ -252,7 +252,7 @@
                             <!-- Submit Buttons -->
                             <div class="d-flex gap-2" id="buttons-section">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="ri-save-line me-1"></i>Simpan Absensi
+                                    <i class="ri-save-line me-1"></i>Simpan Presensi
                                 </button>
                                 <button type="reset" class="btn btn-secondary">
                                     <i class="ri-refresh-line me-1"></i>Reset Form

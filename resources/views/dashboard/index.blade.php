@@ -183,7 +183,7 @@
             <div class="col-lg-8 mb-3">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="header-title mb-0">Trend Absensi Mingguan</h5>
+                        <h5 class="header-title mb-0">Trend Presensi Mingguan</h5>
                         <button class="btn btn-sm btn-outline-secondary" onclick="location.reload()">
                             <i class="ri-refresh-line"></i>
                         </button>
@@ -250,7 +250,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="header-title mb-0">Data Absensi</h4>
+                        <h4 class="header-title mb-0">Data Presensi</h4>
                         <div class="d-flex gap-2">
                             <button class="btn btn-outline-primary btn-sm" id="refresh-table">
                                 <i class="ri-refresh-line me-1"></i>Refresh
@@ -380,7 +380,7 @@
                         next: "Selanjutnya",
                         previous: "Sebelumnya"
                     },
-                    emptyTable: "Tidak ada data absensi"
+                    emptyTable: "Tidak ada data Presensi"
                 },
                 pageLength: 25,
                 lengthMenu: [
@@ -612,7 +612,7 @@
 
                 // Update chart title based on period
                 const period = $('#filter-period').val();
-                let title = 'Trend Absensi ';
+                let title = 'Trend Presensi ';
                 switch (period) {
                     case 'daily':
                         title += 'Mingguan (7 Hari)';
